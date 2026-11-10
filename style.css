@@ -1,0 +1,516 @@
+
+/* =========================================
+   1. ESTILOS GLOBALES
+========================================= */
+
+@font-face {
+    font-family: "Bitrank";
+    src: url("fonts/Bitrank-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --yellow: #FCDB1D;
+    --turquoise: #2CD2DB;
+    --green: #47D400;
+    --white: #FFFFFF;
+    --black: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Bitrank", Arial, sans-serif;
+    background-color: var(--white);
+    color: var(--black);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+main {
+    flex: 1;
+}
+
+.site-footer {
+    padding: 20px;
+    text-align: center;
+    background-color: var(--white);
+    color: var(--black);
+    font-size: 14px;
+}
+
+/* =========================================
+   2. NAVEGACIÓN
+========================================= */
+
+.site-header {
+    width: 100%;
+    background-color: var(--white);
+    position: relative;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 6%;
+    position: relative;
+}
+
+.nav-logo {
+    font-size: 23px;
+    color: var(--yellow);
+    font-weight: bold;
+}
+
+.nav-links {
+    display: none;
+    list-style: none;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 25px;
+    background-color: var(--white);
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+.nav-links a {
+    color: var(--black);
+    font-size: 17px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--yellow);
+}
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.menu-toggle span {
+    width: 27px;
+    height: 3px;
+    background-color: var(--black);
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* =========================================
+   3. PÁGINA HOME
+========================================= */
+
+.home-canvas {
+    min-height: 75vh;
+    width: 100%;
+    padding: 45px 6%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--white);
+}
+
+/* Graffiti Dios */
+
+.graffiti-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.graffiti-text {
+    color: var(--green);
+    font-size: clamp(75px, 17vw, 180px);
+    font-weight: bold;
+    line-height: 1;
+    transform: rotate(-8deg);
+    text-shadow: 3px 3px 0 rgba(71, 212, 0, 0.12);
+}
+
+/* Título principal */
+
+.home-content {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.home-title {
+    color: var(--yellow);
+    font-size: clamp(38px, 8vw, 75px);
+    margin-bottom: 35px;
+    line-height: 1.1;
+}
+
+/* Botones del Home */
+
+.home-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+}
+
+.home-button {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 20px;
+    border: 2px solid var(--turquoise);
+    border-radius: 5px;
+    background-color: var(--turquoise);
+    color: var(--black);
+    text-align: center;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: var(--yellow);
+    border-color: var(--yellow);
+    transform: translateY(-3px);
+}
+
+.instagram-button {
+    color: var(--yellow);
+    background-color: var(--black);
+    border-color: var(--black);
+}
+
+.instagram-button:hover {
+    color: var(--black);
+    background-color: var(--yellow);
+    border-color: var(--yellow);
+}
+
+/* =========================================
+   4. PÁGINA PORTAFOLIO
+========================================= */
+
+.portfolio-main {
+    padding: 40px 6%;
+}
+
+.portfolio-intro {
+    text-align: center;
+    margin: 25px auto 45px;
+}
+
+.portfolio-intro h1,
+.contact-intro h1 {
+    font-size: clamp(35px, 7vw, 60px);
+    margin-bottom: 15px;
+}
+
+.portfolio-intro p,
+.contact-intro p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+/* Columnas del portafolio */
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.portfolio-column {
+    background-color: var(--turquoise);
+    padding: 25px;
+    border-radius: 6px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transition: transform 0.3s ease;
+    scroll-margin-top: 20px;
+}
+
+.portfolio-column:hover {
+    transform: translateY(-5px);
+}
+
+.portfolio-column h2 {
+    font-size: 24px;
+}
+
+.portfolio-column p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.portfolio-image-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    color: var(--black);
+    font-size: 17px;
+}
+
+.portfolio-cta {
+    text-align: center;
+    margin: 55px auto 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.portfolio-cta h2 {
+    font-size: 30px;
+}
+
+/* =========================================
+   5. PÁGINA CONTACTO
+========================================= */
+
+.contact-main {
+    padding: 40px 6%;
+}
+
+.contact-intro {
+    text-align: center;
+    margin: 25px auto 45px;
+    max-width: 750px;
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto 50px;
+}
+
+.contact-info {
+    background-color: var(--turquoise);
+    padding: 35px 25px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.contact-info h2 {
+    font-size: 30px;
+}
+
+.contact-info p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.instagram-link {
+    color: var(--yellow);
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 30px 20px;
+    border: 2px solid var(--turquoise);
+    border-radius: 6px;
+}
+
+.contact-form label {
+    font-size: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #999999;
+    border-radius: 4px;
+    font-size: 15px;
+    background-color: var(--white);
+    color: var(--black);
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--turquoise);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-button {
+    margin-top: 10px;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--turquoise);
+    color: var(--black);
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-button:hover {
+    background-color: var(--yellow);
+}
+
+.form-message {
+    font-size: 15px;
+    margin-top: 8px;
+}
+
+/* =========================================
+   6. RESPONSIVE - TABLETS
+========================================= */
+
+@media (min-width: 600px) {
+
+    .home-canvas {
+        padding: 60px 8%;
+    }
+
+    .graffiti-container {
+        margin-bottom: 25px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-layout {
+        grid-template-columns: 1fr 1.3fr;
+    }
+
+}
+
+/* =========================================
+   7. RESPONSIVE - ESCRITORIO
+========================================= */
+
+@media (min-width: 900px) {
+
+    .navbar {
+        padding: 22px 8%;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        width: auto;
+        padding: 0;
+        gap: 35px;
+        box-shadow: none;
+    }
+
+    .home-canvas {
+        min-height: 80vh;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 35px;
+        padding: 50px 8%;
+    }
+
+    .graffiti-container {
+        width: 40%;
+        margin: 0;
+    }
+
+    .home-content {
+        width: 60%;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .portfolio-main,
+    .contact-main {
+        padding: 55px 8%;
+    }
+
+}
+
+/* =========================================
+   8. RESPONSIVE - MÓVILES PEQUEÑOS
+========================================= */
+
+@media (max-width: 380px) {
+
+    .home-title {
+        font-size: 34px;
+    }
+
+    .home-button {
+        font-size: 16px;
+        padding: 13px;
+    }
+
+    .graffiti-text {
+        font-size: 75px;
+    }
+
+    .nav-logo {
+        font-size: 20px;
+    }
+
+}

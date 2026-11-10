@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacta con Disfrutomiarte.">
+    <title>Disfrutomiarte | Contacto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="contact-page">
+
+    <header class="site-header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">Disfrutomiarte</a>
+
+            <button class="menu-toggle" aria-label="Abrir menú"
+                    aria-expanded="false" aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="portafolio.html">Portafolio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contact-main">
+
+        <section class="contact-intro">
+            <h1>Contacto</h1>
+            <p>¿Quieres compartir una idea o conocer más sobre mi trabajo?</p>
+            <p>¡Hablemos!</p>
+        </section>
+
+        <section class="contact-layout">
+
+            <div class="contact-info">
+                <h2>Disfrutomiarte</h2>
+                <p>El arte es una forma de disfrutar, crear y conectar.</p>
+
+                <a href="https://www.instagram.com/disfrutomiarte/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="instagram-link">
+                    @disfrutomiarte
+                </a>
+            </div>
+
+            <form class="contact-form" id="contact-form">
+
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre"
+                       placeholder="Escribe tu nombre" required>
+
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email"
+                       placeholder="Escribe tu correo" required>
+
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje"
+                          rows="5"
+                          placeholder="Cuéntame tu idea..."
+                          required></textarea>
+
+                <button type="submit" class="submit-button">
+                    Enviar mensaje
+                </button>
+
+                <p id="form-message" class="form-message"
+                   aria-live="polite"></p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 Disfrutomiarte</p>
+    </footer>
